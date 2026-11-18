@@ -101,8 +101,6 @@ const mods = [
     ],
     repo: 'https://github.com/modrollstudio/Initiative',
     links: [
-      // TODO: not approved on Modrinth yet; remove todo: true once the project is live
-      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-initiative', todo: true },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-initiative' },
     ],
   },
@@ -113,7 +111,7 @@ const mods = [
     icon: checksIcon,
     tagline: "Ability scores, skills, saves and character creation for Minecraft, built on Critfall's d20 engine.",
     status: 'Released',
-    version: '0.1.4',
+    version: '0.2.0',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     requires: { slug: 'critfall', version: '0.2.18' },
@@ -149,8 +147,6 @@ const mods = [
     ],
     repo: 'https://github.com/modrollstudio/Checks',
     links: [
-      // TODO: not approved on Modrinth yet; remove todo: true once the project is live
-      { label: 'Modrinth', href: 'https://modrinth.com/mod/critfall-checks', todo: true },
       { label: 'CurseForge', href: 'https://www.curseforge.com/minecraft/mc-mods/critfall-checks' },
     ],
   },
