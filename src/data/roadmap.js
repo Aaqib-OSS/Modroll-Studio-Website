@@ -14,17 +14,17 @@ const roadmap = [
   {
     title: `Initiative`,
     status: `released`,
-    note: `Dice-driven turn order for Minecraft combat. Other features are welcome to be requested.`,
+    note: `Dice-driven turn order for Minecraft combat. Other features are welcome to be requested -Out now on CurseForge.`,
   },
   {
     title: `Checks`,
     status: `released`,
-    note: `Ability scores, skills, saving throws, character creation and levels 1–20 — out now on CurseForge, with Modrinth coming soon.`,
+    note: `Ability scores, skills, saving throws, character creation and levels 1–20 - Out now on CurseForge.`,
   },
   {
     title: `Headless Horseman`,
     status: `released`,
-    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October.`,
+    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October — out now on CurseForge and modrinth`,
   },
   {
     title: `Depths`,
