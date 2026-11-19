@@ -8,10 +8,18 @@ import '@fontsource/pixelify-sans/700.css';
 import './styles/global.scss';
 import App from './App.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root');
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// built pages arrive prerendered (scripts/prerender.js); the dev server sends an empty root
+if (root.hasChildNodes()) {
+  ReactDOM.hydrateRoot(root, app);
+} else {
+  ReactDOM.createRoot(root).render(app);
+}
