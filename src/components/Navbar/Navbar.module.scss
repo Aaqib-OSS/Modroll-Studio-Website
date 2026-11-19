@@ -86,16 +86,7 @@
   .navbar { animation: none; }
   .glyph, .links a::after { transition: none; }
 }
-.actions { margin-left: auto; }
-
-// per-mod links need ~820px on one row (measured with Home + 5 mods); below it they give way to the single Mods link.
-// Re-measure when a mod is added or renamed (the nav must not wrap or scroll sideways).
-$nav-collapse: 870px;
-.narrow { display: none; }
-@media (max-width: $nav-collapse) {
-  .wide   { display: none; }
-  .narrow { display: list-item; }
-}
+.actions { margin-left: auto; display: flex; gap: var(--space-sm); }
 
 // phones: tighter spacing and a smaller logo keep one row down to 320px;
 // wrap is only a fallback so nothing can overflow

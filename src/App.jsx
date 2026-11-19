@@ -6,7 +6,6 @@ import Home from './pages/Home.jsx';
 import ModPage from './pages/ModPage.jsx';
 import NotFound from './pages/NotFound.jsx';
 
-// a hash (e.g. /#mods from the nav) scrolls to that section; otherwise a new page starts at the top
 function ScrollToTop() {
   const { pathname, hash, key } = useLocation();
   useEffect(() => {
