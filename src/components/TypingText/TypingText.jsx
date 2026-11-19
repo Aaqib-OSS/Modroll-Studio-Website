@@ -6,10 +6,15 @@ const eraseMs = 40;
 const holdMs = 1900;
 
 export default function TypingText({ words }) {
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const [reduced, setReduced] = useState(false);
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const [erasing, setErasing] = useState(false);
+
+  // read after mount, since the build prerenders this without a window
+  useEffect(() => {
+    setReduced(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }, []);
 
   useEffect(() => {
     if (reduced) return;
