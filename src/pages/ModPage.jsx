@@ -9,6 +9,7 @@ import Section from '../components/Section/Section.jsx';
 import FadeInOnScroll from '../components/FadeInOnScroll/FadeInOnScroll.jsx';
 import FloatingEmbers from '../components/FloatingEmbers/FloatingEmbers.jsx';
 import { getMod, isReleased, statusLabel } from '../data/mods.js';
+import { modHead } from '../data/head.js';
 import NotFound from './NotFound.jsx';
 import styles from './ModPage.module.scss';
 
@@ -24,8 +25,9 @@ export default function ModPage() {
 
   useEffect(() => {
     if (!mod) return;
-    document.title = `${mod.fullName ?? mod.name} — Modroll Studio`;
-    document.querySelector('link[rel="canonical"]').href = `https://modroll.studio/mods/${mod.slug}`;
+    const head = modHead(mod);
+    document.title = head.title;
+    document.querySelector('link[rel="canonical"]').href = head.canonical;
   }, [mod]);
 
   if (!mod) return <NotFound />;

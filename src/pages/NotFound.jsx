@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import Button from '../components/Button/Button.jsx';
+import { notFoundTitle } from '../data/head.js';
 import styles from './NotFound.module.scss';
 
 export default function NotFound() {
   useEffect(() => {
-    document.title = 'Page not found — Modroll Studio';
+    document.title = notFoundTitle;
   }, []);
 
   return (

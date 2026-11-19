@@ -12,8 +12,8 @@
   "assets": {
     // serve the Vite build output as a static site
     "directory": "./dist",
-    // unknown URLs (like /mods/critfall) serve index.html so React Router handles them
-    "not_found_handling": "single-page-application"
+    // each page has its own HTML file (scripts/prerender.js); unknown URLs get 404.html with a 404 status
+    "not_found_handling": "404-page"
   },
   "compatibility_flags": [
     "nodejs_compat"
