@@ -14,22 +14,37 @@ const roadmap = [
   {
     title: `Initiative`,
     status: `released`,
-    note: `Dice-driven turn order for Minecraft combat. Other features are welcome to be requested -Out now on CurseForge.`,
+    note: `Dice driven turn order for Minecraft combat, out now on CurseForge. Mob turns come next, in 0.3.0. Feature requests are welcome.`,
   },
   {
     title: `Checks`,
     status: `released`,
-    note: `Ability scores, skills, saving throws, character creation and levels 1–20 - Out now on CurseForge.`,
+    note: `Ability scores, skills, saving throws, character creation and levels 1–20, out now on CurseForge.`,
   },
   {
     title: `Headless Horseman`,
     status: `released`,
-    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October — out now on CurseForge and modrinth`,
+    note: `A Halloween boss: a headless rider and his Gallows Steed, at midnight through October — out now on CurseForge and Modrinth.`,
   },
   {
     title: `Depths`,
-    status: `ongoing`,
-    note: `Party runs through generated dungeons in the dark, with traps, ambushes and secret doors — all rolled through Critfall. The real boss comes next.`,
+    status: `next`,
+    note: `Party runs through generated dungeons in the dark, with traps, ambushes, secret doors and a boss at the bottom, all rolled through Critfall. Waiting on its art.`,
+  },
+  {
+    title: `Monsters`,
+    status: `next`,
+    note: `Goblins, hobgoblins, dire wolves and the bugbear, each with their own tactics and every roll through Critfall. Waiting on its art.`,
+  },
+  {
+    title: `Spells`,
+    status: `planned`,
+    note: `Tabletop spellcasting for Checks' caster classes: spell slots, preparing spells, a spell wheel and about 110 SRD spells in the first release.`,
+  },
+  {
+    title: `Treasury`,
+    status: `planned`,
+    note: `Tabletop items for Minecraft: a bag of holding, potions, weapons and cursed items.`,
   },
 ];
 
