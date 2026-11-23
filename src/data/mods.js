@@ -3,12 +3,13 @@ import initiativeIcon from '../assets/initiative-icon.png';
 import checksIcon from '../assets/checks-icon.png';
 import depthsIcon from '../assets/depths-icon.png';
 import horsemanIcon from '../assets/horseman-icon.png';
+import placeholderIcon from '../assets/modroll-glyph.png';
 
 // A mod also needs an icon in src/assets and a URL entry in public/sitemap.xml;
 // description[0] doubles as the home card summary.
 // Only status 'Released' shows the install links; any other status (e.g. 'In development')
 // hides them. version, mcVersion, loaders, features, links, repo and requires are all optional.
-// requires names another mod's slug plus the minimum version, shown on the mod page and home card;
+// requires names another mod's slug plus, once known, the minimum version, shown on the mod page and home card;
 // a mod with requires is labelled an add-on of that mod.
 // name is the short name used across the site; fullName (optional) is the store name used in the
 // page <title> for search.
@@ -19,7 +20,7 @@ const mods = [
     icon: critfallIcon,
     tagline: 'Tabletop-style d20 combat for Minecraft.',
     status: 'Released',
-    version: '0.2.18',
+    version: '0.2.20',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     description: [
@@ -65,7 +66,7 @@ const mods = [
     icon: initiativeIcon,
     tagline: 'Turn-based, initiative-driven combat for Minecraft. Out now on CurseForge.',
     status: 'Released',
-    version: '0.2.1',
+    version: '0.2.2',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     requires: { slug: 'critfall', version: '0.2.16' },
@@ -111,10 +112,10 @@ const mods = [
     icon: checksIcon,
     tagline: "Ability scores, skills, saves and character creation for Minecraft, built on Critfall's d20 engine. Out now on CurseForge.",
     status: 'Released',
-    version: '0.2.0',
+    version: '0.2.3',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
-    requires: { slug: 'critfall', version: '0.2.18' },
+    requires: { slug: 'critfall', version: '0.2.20' },
     description: [
       'Checks adds the character sheet that Critfall leaves out: six ability scores, skills, saving throws and a proficiency bonus for every player and mob, with every die rolled through Critfall.',
       'New players build a character on first join — species, background and class, then their ability scores — and level from 1 to 20 as they play. Critfall and Initiative both work without it.',
@@ -198,6 +199,47 @@ const mods = [
     ],
   },
   {
+    slug: 'monsters',
+    name: 'Monsters',
+    fullName: 'Critfall: Monsters',
+    icon: placeholderIcon,
+    tagline: "Goblins, hobgoblins, dire wolves and a bugbear boss for Minecraft, built on Critfall's d20 engine.",
+    status: 'Coming soon',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall', version: '0.2.19' },
+    description: [
+      'Monsters for Critfall, each kind with its own way of fighting. The first pack is the goblin pack: goblins, hobgoblins and dire wolves, and their boss, the bugbear.',
+      "Critfall rolls every attack, damage roll and save. With Checks, the knockdown and the bugbear's saves use your character's abilities, and with Initiative the monsters join its encounters; both are optional. It also needs GeckoLib. Natural spawning is off by default, and every feature can be turned off in the config.",
+    ],
+    features: [
+      {
+        title: 'Goblins',
+        text: 'They see in the dark and attack with advantage in low light or from behind. Cutters hit and slip away, archers keep their distance, sneaks throw knives, and a boss leads the gang.',
+      },
+      {
+        title: 'Hobgoblins',
+        text: 'Soldiers with longsword and shield, bowmen with poisoned arrows, and a captain with a boss bar. Pack Tactics gives them advantage while an ally stands next to their target.',
+      },
+      {
+        title: 'Dire wolves',
+        text: 'They hunt in pairs. A bite that hits calls for a Strength save, or you are knocked down and crawl for 2 seconds. Goblins and hobgoblins ride them.',
+      },
+      {
+        title: 'The bugbear',
+        text: 'The pack’s boss drops on you from hiding, grabs and throws players, throws his goblins at you, and puts out the lights around him.',
+      },
+      {
+        title: "The Bugbear's Mace",
+        text: 'He always drops it: a slow, heavy weapon with a block more reach. Right click to spin it: creatures within 3 blocks make a Dexterity save or take damage and are knocked back.',
+      },
+      {
+        title: 'Getting them into a world',
+        text: 'Spawn eggs, /summon and an API for other mods. Turn on natural spawning and gangs, pairs and wolf riders turn up in the dark.',
+      },
+    ],
+  },
+  {
     slug: 'depths',
     name: 'Depths',
     fullName: 'Critfall: Depths',
@@ -235,6 +277,62 @@ const mods = [
       {
         title: 'Built from data packs',
         text: 'Rooms are structure templates with a JSON file; dungeons, traps and loot tables are data too. Every feature has its own config switch.',
+      },
+    ],
+  },
+  {
+    slug: 'treasury',
+    name: 'Treasury',
+    fullName: 'Critfall: Treasury',
+    icon: placeholderIcon,
+    tagline: "Tabletop items for Minecraft, built on Critfall's d20 engine.",
+    status: 'Planned',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall' },
+    description: [
+      'Treasury brings tabletop items to Minecraft. Work on it starts after Depths.',
+      'With Monsters, a kill will roll a loot die through Critfall for a chance at its items.',
+    ],
+  },
+  {
+    slug: 'spells',
+    name: 'Spells',
+    fullName: 'Critfall: Spells',
+    icon: placeholderIcon,
+    tagline: "Spellcasting for Minecraft, built on Critfall's d20 engine.",
+    status: 'Planned',
+    mcVersion: '1.21.1',
+    loaders: ['NeoForge', 'Fabric'],
+    requires: { slug: 'critfall', version: '0.2.20' },
+    description: [
+      'Spells lets the casting classes from Checks cast, on the 2024 rules: prepared spells by class and level, spell slots, and a save DC and attack bonus from your spellcasting ability. Mobs cast the same spells.',
+      'Critfall rolls every attack, save and damage roll, and Checks gives you your class and level, so it needs both. With Initiative, a spell takes your action, bonus action or reaction; that one is optional. The first release covers cantrips to 3rd level.',
+    ],
+    features: [
+      {
+        title: 'Every casting class',
+        text: 'Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock and Wizard, each with its own slots and prepared spells.',
+      },
+      {
+        title: 'Hold to cast',
+        text: 'Hold right click with a focus to wind up a spell, like drawing a bow. Let go early and nothing is spent.',
+      },
+      {
+        title: 'The spell wheel',
+        text: 'Hold a key to pick one of your prepared spells and the slot level to cast it at.',
+      },
+      {
+        title: 'Reactions',
+        text: 'Shield, Counterspell, Hellish Rebuke and Feather Fall go off by themselves when their trigger comes.',
+      },
+      {
+        title: 'Scrolls',
+        text: "Spell scrolls turn up in Depths and vanilla chests. Cast one from your class's list, or copy it into a wizard's spellbook.",
+      },
+      {
+        title: 'Spells as data',
+        text: 'Each spell is a data file, so packs add spells the same way the mod does, and any mob can become a caster.',
       },
     ],
   },

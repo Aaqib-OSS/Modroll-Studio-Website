@@ -69,8 +69,9 @@ export default function ModPage() {
         ))}
         {required && (
           <p className={styles.requires}>
-            Requires <Link to={`/mods/${required.slug}`}>{required.name}</Link> {mod.requires.version} or
-            newer — install both on the server and every client.
+            Requires <Link to={`/mods/${required.slug}`}>{required.name}</Link>
+            {mod.requires.version && ` ${mod.requires.version} or newer`} — install both on the server and every
+            client.
           </p>
         )}
       </Section>
