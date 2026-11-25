@@ -34,14 +34,65 @@
   align-items: center;
   gap: var(--space-sm);
 }
+.diceButton {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
+
+  &:hover .glyph {
+    transform: translateY(-2px);
+  }
+}
+.die {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+}
 .glyph {
+  display: block;
   flex: none;
   image-rendering: pixelated;
   transition: transform 0.3s ease;
 }
-.logo:hover .glyph,
-.logo:focus-visible .glyph {
-  transform: translateY(-2px);
+.rolling .glyph {
+  animation: dice-roll 0.65s cubic-bezier(0.2, 0.75, 0.3, 1) both;
+}
+.result {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  margin: auto;
+  place-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1;
+}
+@keyframes dice-roll {
+  0% { transform: rotate(0) translateY(0) scale(1); }
+  20% { transform: rotate(100deg) translateY(-5px) scale(1.08); }
+  45% { transform: rotate(210deg) translateY(0) scale(0.92); }
+  70% { transform: rotate(300deg) translateY(-4px) scale(1.04); }
+  100% { transform: rotate(360deg) translateY(0) scale(1); }
 }
 .wordmark {
   font-family: var(--font-display);
@@ -85,6 +136,7 @@
 @media (prefers-reduced-motion: reduce) {
   .navbar { animation: none; }
   .glyph, .links a::after { transition: none; }
+  .rolling .glyph { animation: none; }
 }
 .actions { margin-left: auto; display: flex; gap: var(--space-sm); }
 
@@ -92,12 +144,15 @@
 // wrap is only a fallback so nothing can overflow
 @media (max-width: 480px) {
   .navbar      { flex-wrap: wrap; gap: var(--space-sm); padding: var(--space-sm); }
+  .die         { width: 32px; height: 32px; }
   .glyph       { width: 32px; height: 32px; }
+  .result      { width: 20px; height: 20px; font-size: 0.7rem; }
   .wordmark    { font-size: var(--text-sm); }
   .links       { gap: var(--space-sm); }
   .actions > a { padding: var(--space-xs) var(--space-sm); }
 }
 @media (max-width: 360px) {
-  .glyph { width: 28px; height: 28px; }
-  .links { font-size: var(--text-sm); }
+  .die, .glyph { width: 28px; height: 28px; }
+  .result      { width: 18px; height: 18px; font-size: 0.65rem; }
+  .links       { font-size: var(--text-sm); }
 }
