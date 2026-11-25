@@ -38,7 +38,7 @@ export default function Navbar() {
           aria-label={result === null ? 'Roll a d20' : `Roll a d20, last result ${result}`}
           aria-busy={rolling}
         >
-          <span className={`${styles.die} ${rolling ? styles.rolling : ''} ${result !== null ? styles.hasResult : ''}`}>
+          <span className={`${styles.die} ${rolling ? styles.rolling : ''}`}>
             <img className={styles.glyph} src={glyph} alt="" width="48" height="48" aria-hidden="true" />
             {result !== null && <span className={styles.result} aria-hidden="true">{result}</span>}
           </span>

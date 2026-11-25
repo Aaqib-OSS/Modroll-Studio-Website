@@ -74,18 +74,18 @@
   position: absolute;
   inset: 0;
   display: grid;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   margin: auto;
   place-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
   color: var(--color-primary);
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 700;
   line-height: 1;
-}
-.hasResult .glyph {
-  visibility: hidden;
 }
 @keyframes dice-roll {
   0% { transform: rotate(0) translateY(0) scale(1); }
