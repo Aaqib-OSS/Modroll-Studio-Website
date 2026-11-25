@@ -9,17 +9,21 @@ export default function Navbar() {
   const [result, setResult] = useState(null);
   const [rolling, setRolling] = useState(false);
   const rollTimeout = useRef(null);
+  const rollingRef = useRef(false);
 
   useEffect(() => () => clearTimeout(rollTimeout.current), []);
 
   function rollDice() {
-    clearTimeout(rollTimeout.current);
+    if (rollingRef.current) return;
+
+    rollingRef.current = true;
     setResult(null);
     setRolling(true);
 
     const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650;
     rollTimeout.current = setTimeout(() => {
       setResult(Math.floor(Math.random() * 20) + 1);
+      rollingRef.current = false;
       setRolling(false);
     }, duration);
   }
@@ -34,7 +38,7 @@ export default function Navbar() {
           aria-label={result === null ? 'Roll a d20' : `Roll a d20, last result ${result}`}
           aria-busy={rolling}
         >
-          <span className={`${styles.die} ${rolling ? styles.rolling : ''}`}>
+          <span className={`${styles.die} ${rolling ? styles.rolling : ''} ${result !== null ? styles.hasResult : ''}`}>
             <img className={styles.glyph} src={glyph} alt="" width="48" height="48" aria-hidden="true" />
             {result !== null && <span className={styles.result} aria-hidden="true">{result}</span>}
           </span>
