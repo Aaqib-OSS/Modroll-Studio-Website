@@ -14,7 +14,7 @@ const roadmap = [
   {
     title: `Initiative`,
     status: `released`,
-    note: `Dice driven turn order for Minecraft combat, out now on CurseForge. Mob turns come next, in 0.3.0. Feature requests are welcome.`,
+    note: `Dice driven turn order for Minecraft combat, out now on CurseForge. 0.3.0 adds mob turns. Feature requests are welcome.`,
   },
   {
     title: `Checks`,

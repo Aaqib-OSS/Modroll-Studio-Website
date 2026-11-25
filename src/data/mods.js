@@ -66,7 +66,7 @@ const mods = [
     icon: initiativeIcon,
     tagline: 'Turn-based, initiative-driven combat for Minecraft. Out now on CurseForge.',
     status: 'Released',
-    version: '0.2.2',
+    version: '0.3.0',
     mcVersion: '1.21.1',
     loaders: ['NeoForge', 'Fabric'],
     requires: { slug: 'critfall', version: '0.2.16' },
